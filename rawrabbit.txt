@@ -1,0 +1,6 @@
+
+
+
+
+//Service API
+Install-Package MediatR.Extensions.Microsoft.DependencyInjection -Version 8.1.0
