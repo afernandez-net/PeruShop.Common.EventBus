@@ -1,13 +1,14 @@
 ﻿namespace PeruShop.Common.EventBus.RabbitMq
 {
-    using System;
-    using System.Reflection;
     using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
     using PeruShop.Common.EventBus.Messaging;
     using RawRabbit;
-    using RawRabbit.Configuration.Exchange;    
+    using RawRabbit.Configuration.Exchange;
+    using System;
+    using System.Reflection;
+
     public class BusSubscriber : IBusSubscriber
     {
         private readonly IBusClient _busClient;
@@ -23,18 +24,10 @@
         {
             _busClient.SubscribeAsync<TEvent>(async (@event) =>
             {
-                try
-                {
-                    using var scope = _serviceProvider.CreateScope();
-                    var handler = scope.ServiceProvider.GetService<IMediator>();
+                using var scope = _serviceProvider.CreateScope();
+                var handler = scope.ServiceProvider.GetService<IMediator>();
 
-                    await handler.Send(@event);
-                }
-                catch (Exception ex)
-                {
-                    //Log.Error(ex, "Error al procesar el mensage");
-                    throw ex;
-                }
+                await handler.Send(@event);
 
             }, ctx => ctx.UseSubscribeConfiguration(cfg => cfg
                 .Consume(c => c.WithRoutingKey(typeof(TEvent).Name))

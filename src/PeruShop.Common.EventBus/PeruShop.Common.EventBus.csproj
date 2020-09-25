@@ -6,9 +6,15 @@
     <Product>EventBus</Product>
     <Company>Particular</Company>
     <Authors>Luis Alexander Fernández</Authors>
-    <Description>Paquete de soporte para mensajeria asincrona con RabbitMQ y Event Source con MediatR</Description>
+    <Description>Paquete de soporte para mensajeria asincrona con RabbitMQ y Event Sourcing con MediatR</Description>
     <PackageIcon></PackageIcon>
     <PackageIconUrl />
+    <RepositoryUrl>https://github.com/afernandez-net/PeruShop.Common.EventBus</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags></PackageTags>
+    <PackageReleaseNotes>Se agrega el repositorio https://github.com/afernandez-net/PeruShop.Common.EventBus con ejemplos de uso.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
+    <PackageProjectUrl>http://www.ventaschinaperu.com/</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

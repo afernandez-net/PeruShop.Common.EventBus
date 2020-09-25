@@ -1,17 +1,17 @@
 ﻿namespace PeruShop.Common.EventBus.Messaging
 {
-    using System;    
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using PeruShop.Common.EventBus.RabbitMq;
     using RawRabbit;
-    using RawRabbit.Configuration;
     using RawRabbit.Enrichers.GlobalExecutionId;
     using RawRabbit.Enrichers.MessageContext;
     using RawRabbit.Enrichers.MessageContext.Context;
     using RawRabbit.Instantiation;
-    public static class RawRabbitInstaller
+    using System;
+
+    public static class Extensions
     {
         public static IServiceCollection AddRabbitMq(this IServiceCollection services, IConfiguration configuration)
         {

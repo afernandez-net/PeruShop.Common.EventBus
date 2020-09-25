@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PeruShop.Services.Customers.Messages.Commands;
-using MediatR;
-using PeruShop.Services.Customers.Domain;
-
-namespace PeruShop.Services.Customers.Controllers
+﻿namespace PeruShop.Services.Customers.Controllers
 {
+    using MediatR;
+    using Microsoft.AspNetCore.Mvc;
+    using PeruShop.Services.Customers.Messages.Commands;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
@@ -20,6 +16,7 @@ namespace PeruShop.Services.Customers.Controllers
         {
             this.mediator = mediator;
         }
+
         // GET: api/Customers
         [HttpGet]
         public IEnumerable<string> Get()
